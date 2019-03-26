@@ -4,4 +4,5 @@
     <string name="location_btn_text">Open Location</string>
     <string name="share_btn_text">Share Text</string>
     <string name="share_text_msg">It was raining and i needed someone by side. Someone comforting i could only think of you android :-)</string>
+    <string name="take_photo">Take photo</string>
 </resources>

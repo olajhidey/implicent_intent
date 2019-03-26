@@ -2,6 +2,7 @@ package com.jonetech.shareapp;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
     private EditText webEditText;
     private EditText locationEditText;
     private EditText shareEditText;
@@ -132,5 +136,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    /**
+     * Opens camera and take photo but doesnt return the picture
+     * @param view
+     */
+
+    public void takePhoto(View view) {
+
+//        TODO(4.0): Create intent to capture image
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if(intent.resolveActivity(getPackageManager()) !=  null) {
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+        }
     }
 }
